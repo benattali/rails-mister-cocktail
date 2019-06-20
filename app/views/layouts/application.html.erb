@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Source+Code+Pro&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application' %>
@@ -13,11 +14,13 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/banner' %>
+    <% if current_page?(root_path) || current_page?(cocktails_path) %>
+      <%= render 'shared/banner' %>
+    <% end %>
     <div class="container">
       <%= yield %>
+    </div>
       <%= javascript_include_tag "application" %>
       <%= javascript_pack_tag "application" %>
-    </div>
   </body>
 </html>

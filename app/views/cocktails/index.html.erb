@@ -1,12 +1,13 @@
-<h1>List of all the cocktails</h1>
-
-<% @cocktails.each do |cocktail| %>
-  <p>
-    <%= link_to cocktail.name, cocktail_path(cocktail) %>
-    <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
-      <i class="fas fa-times"></i>
-    <% end %>
-  </p>
-<% end %>
-
-<%= link_to "Add your own", new_cocktail_path %>
+<div class="row">
+  <% @cocktails.each do |cocktail| %>
+    <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center my-4">
+      <%= link_to cocktail_path(cocktail), class: "cocktail-link" do  %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.photo %>)">
+          <div class="card-title">
+            <p> <%= cocktail.name %> </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
