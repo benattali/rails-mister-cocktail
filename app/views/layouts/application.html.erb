@@ -13,8 +13,11 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
-    <%= javascript_pack_tag "application" %>
+    <%= render 'shared/banner' %>
+    <div class="container">
+      <%= yield %>
+      <%= javascript_include_tag "application" %>
+      <%= javascript_pack_tag "application" %>
+    </div>
   </body>
 </html>
