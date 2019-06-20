@@ -12,9 +12,11 @@
 </div>
 
  <div class="form-actions">
-  <%= f.button :submit, value: "Add" %>
+  <%= f.button :submit, value: "Add", class: "btn btn-outline-danger" %>
 </div>
 
 <% end %>
 
-<%= link_to "Back", cocktail_path(@cocktail) %>
+<%= link_to cocktail_path(@cocktail) do %>
+  <p> <i class="fas fa-arrow-circle-left"></i> </p>
+<% end %>
