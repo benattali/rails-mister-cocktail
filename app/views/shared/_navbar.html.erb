@@ -3,7 +3,8 @@
     <h4> The Bar Chef </h4>
   <% end %>
 
-  <h1> <i class="fas fa-glass-martini-alt"></i> </h1>
+  <!-- <h1> <i class="fas fa-glass-martini-alt"></i> </h1> -->
+  <%= cl_image_tag("https://www.flaticon.com/premium-icon/icons/svg/1842/1842276.svg",width: 70, height: 50, crop: :fill) %>
 
   <%= link_to new_cocktail_path, class: "navbar-brand btn btn-outline-light" do %>
     <h5> Add a <i class="fas fa-glass-martini-alt"></i> </h5>

@@ -22,11 +22,15 @@
   }
 }
 
-.card-cocktail {
-  display: flex;
-}
-
 .card-cocktail-description {
   margin-left: 15px;
   margin-bottom: 3px;
+  font-size: 25px;
+}
+
+.card-add-ingredient {
+  display: flex;
+  h3 {
+    margin-right: 5px;
+  }
 }

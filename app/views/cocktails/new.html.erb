@@ -15,11 +15,12 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, value: "Add", class: "btn btn-outline-danger" %>
+    <%= f.button :submit, value: "Add", class: "btn btn-outline-light btn-cocktail" %>
   </div>
 <% end %>
-
-<%= link_to cocktails_path do %>
-  <p data-toggle="tooltip" data-placement="top" title="Back"> <i class="fas fa-arrow-circle-left"></i> </p>
-<% end %>
-
+<br>
+<span data-toggle="tooltip" data-placement="top" title="Back">
+  <%= link_to cocktails_path, class: "btn btn-outline-light btn-cocktail" do %>
+     <i class="fas fa-arrow-circle-left"></i>
+  <% end %>
+</span>

@@ -1,25 +1,42 @@
-<h1><%= @cocktail.name %></h1>
-<div class="card-cocktail">
-
-    <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
-    <div class="card-cocktail-description">
-      <% @cocktail.doses.each do |dose| %>
-        <h4>
-          <%= dose.description %>
-          <%= dose.ingredient.name %>
-          <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-            <i class="fas fa-times"></i>
-          <% end %>
-        </h4>
-      <% end %>
+<span data-toggle="tooltip" data-placement="top" title="Back">
+  <%= link_to cocktails_path, class: "btn btn-outline-light btn-back m-1" do %>
+    <div class="d-flex justify-content-center">
+      <i class="fas fa-arrow-circle-left"></i>
     </div>
+  <% end %>
+</span>
+
+<h1 class="text-center m-3"><%= @cocktail.name %></h1>
+
+<div class="card-cocktail">
+  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+  <div class="card-cocktail-description">
+    <div class="card-add-ingredient">
+      <h3> Ingredients </h3>
+      <span data-toggle="tooltip" data-placement="top" title="Add">
+        <%= link_to new_cocktail_dose_path(@cocktail) do %>
+          <i class="fas fa-plus"></i>
+        <% end %>
+      </span>
+    </div>
+    <% @cocktail.doses.each do |dose| %>
+      <p>
+        <%= dose.ingredient.name %>
+        <%= dose.description %>
+        <span data-toggle="tooltip" data-placement="top" title="Delete">
+          <%= link_to dose_path(dose), method: :delete, data: { confirm: "Delete this ingredient?" } do %>
+            <i class="fas fa-times icon-delete"></i>
+          <% end %>
+        </span>
+      </p>
+    <% end %>
+  </div>
 </div>
-<%= link_to new_cocktail_dose_path(@cocktail) do %>
-  <p data-toggle="tooltip" data-placement="top" title="Add"> <i class="fas fa-plus-circle"></i> </p>
-<% end %>
-<%= link_to cocktails_path do %>
-  <p data-toggle="tooltip" data-placement="top" title="Back"> <i class="fas fa-arrow-circle-left"></i> </p>
-<% end %>
-<%= link_to cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
-  <p data-toggle="tooltip" data-placement="top" title="Delete"> <i class="fas fa-trash"></i> </p>
-<% end %>
+
+<div class="d-flex justify-content-center">
+  <span data-toggle="tooltip" data-placement="top" title="Delete">
+    <%= link_to cocktail_path(@cocktail), class: "btn btn-outline-light btn-cocktail", method: :delete, data: { confirm: "Are you sure you want to delete this cocktail?" } do %>
+      <i class="fas fa-trash"></i>
+    <% end %>
+  </span>
+</div>
