@@ -1,3 +1,11 @@
+<span data-toggle="tooltip" data-placement="top" title="Back">
+  <%= link_to cocktails_path, class: "btn btn-outline-light btn-back m-1" do %>
+    <div class="d-flex justify-content-center">
+      <i class="fas fa-arrow-circle-left"></i>
+    </div>
+  <% end %>
+</span>
+
 <%= simple_form_for([@cocktail, @dose]) do |f| %>
 
   <% if @dose.errors.any? %>
@@ -12,11 +20,7 @@
 </div>
 
  <div class="form-actions">
-  <%= f.button :submit, value: "Add", class: "btn btn-outline-danger" %>
+  <%= f.button :submit, value: "Add", class: "btn btn-outline-light btn-cocktail mb-2" %>
 </div>
 
-<% end %>
-
-<%= link_to cocktail_path(@cocktail) do %>
-  <span data-toggle="tooltip" data-placement="top" title="Back"> <i class="fas fa-arrow-circle-left"></i> </span>
 <% end %>
