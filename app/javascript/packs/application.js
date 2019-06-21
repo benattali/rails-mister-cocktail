@@ -19,6 +19,8 @@ import 'bootstrap';
 import 'select2/dist/css/select2.css';
 import { initSelect2 } from '../components/init_select2';
 import { tooltip } from '../components/tooltip';
+import { loadDynamicBannerText } from '../components/banner'
 
 initSelect2();
 tooltip();
+loadDynamicBannerText();
