@@ -1,4 +1,4 @@
-# Bar Chef
+# [Bar Chef](https://bar-chef.herokuapp.com)
 ## Installation
 #### Assuming you have ruby and rails installed, to run this app locally do the following:
 ##### This section you do only once
